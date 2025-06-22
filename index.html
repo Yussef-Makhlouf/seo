@@ -1,0 +1,688 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>تقرير تحسين موقع نظرة الإبداع - أنظمة مكافحة الحريق</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;900&display=swap" rel="stylesheet">
+    <style>
+        * {
+            font-family: 'Cairo', sans-serif;
+        }
+        
+        .gradient-bg {
+            background: linear-gradient(135deg, #db3545 0%, #8f1d24 100%);
+        }
+        
+        .gradient-text {
+            background: linear-gradient(135deg, #db3545 0%, #8f1d24 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .card-hover {
+            transition: all 0.3s ease;
+        }
+        
+        .card-hover:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+        }
+        
+        .section-divider {
+            height: 4px;
+            background: linear-gradient(90deg, #db3545 0%, #8f1d24 100%);
+            border-radius: 2px;
+            margin: 2rem 0;
+        }
+        
+        .icon-bg {
+            background: linear-gradient(135deg, #db3545 0%, #8f1d24 100%);
+        }
+        
+        .counter-item {
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .counter-item::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(45deg, rgba(102, 126, 234, 0.1), rgba(118, 75, 162, 0.1));
+            transform: translateX(100%);
+            transition: transform 0.3s ease;
+        }
+        
+        .counter-item:hover::before {
+            transform: translateX(0);
+        }
+        
+        .timeline-item {
+            position: relative;
+            padding-right: 2rem;
+        }
+        
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            right: -6px;
+            top: 1rem;
+            width: 12px;
+            height: 12px;
+            background: #db3545;
+            border-radius: 50%;
+            border: 3px solid white;
+            box-shadow: 0 0 0 3px #db3545;
+        }
+        
+        .timeline-line {
+            position: absolute;
+            right: -1px;
+            top: 2rem;
+            width: 2px;
+            height: calc(100% - 2rem);
+            background: linear-gradient(to bottom, #db3545, #8f1d24);
+        }
+        
+        @media print {
+            .no-print {
+                display: none !important;
+            }
+            body {
+                font-size: 12px;
+                line-height: 1.4;
+            }
+            .container {
+                max-width: none !important;
+                padding: 0 !important;
+            }
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+    <!-- Header -->
+    <header class="gradient-bg text-white py-6 sticky top-0 z-50 shadow-lg">
+        <div class="container mx-auto px-4">
+            <div class="flex items-center justify-between">
+                <div class="flex items-center space-x-4 space-x-reverse">
+                    <div class="icon-bg p-3 rounded-full">
+                        <i class="fas fa-fire-extinguisher text-2xl"></i>
+                    </div>
+                    <div>
+                        <h1 class="text-2xl font-bold">نظرة الإبداع</h1>
+                        <p class="text-sm opacity-90">أنظمة مكافحة الحريق</p>
+                    </div>
+                </div>
+                <nav class="hidden md:flex space-x-6 space-x-reverse">
+                    <a href="#intro" class="hover:text-blue-200 transition-colors">المقدمة</a>
+                    <a href="#technical" class="hover:text-blue-200 transition-colors">التحسينات التقنية</a>
+                    <a href="#design" class="hover:text-blue-200 transition-colors">التصميم</a>
+                    <a href="#content" class="hover:text-blue-200 transition-colors">المحتوى</a>
+                    <a href="#results" class="hover:text-blue-200 transition-colors">النتائج</a>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="gradient-bg text-white py-20">
+        <div class="container mx-auto px-4 text-center">
+            <div class="max-w-4xl mx-auto">
+                <h2 class="text-5xl font-bold mb-6">تقرير تحسين الموقع الإلكتروني</h2>
+                <p class="text-xl mb-8 opacity-90">تقرير شامل عن الأعمال التطويرية والتحسينات التقنية المنفذة لتعزيز الأداء والظهور في محركات البحث</p>
+       
+            </div>
+        </div>
+    </section>
+
+    <!-- Introduction -->
+    <section id="intro" class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="max-w-4xl mx-auto">
+                <h3 class="text-4xl font-bold text-center mb-8 gradient-text">المقدمة</h3>
+                <div class="bg-gradient-to-r from-blue-50 to-purple-50 rounded-xl p-8 shadow-lg">
+                    <p class="text-lg leading-relaxed text-gray-700">
+                        يُعرض هذا التقرير الأعمال التطويرية والتحسينات التقنية التي تم تنفيذها على موقع نظرة الإبداع لأنظمة مكافحة الحريق، بهدف تعزيز ظهور الموقع في محركات البحث وتحسين الأداء التقني الشامل. تم تطبيق أحدث التقنيات والممارسات لضمان حصول الموقع على أفضل أداء ممكن.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Technical Improvements -->
+    <section id="technical" class="py-16 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <h3 class="text-4xl font-bold text-center mb-12 gradient-text">التحسينات التقنية الأساسية</h3>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
+                <div class="card-hover bg-white rounded-xl p-8 shadow-lg border-t-4 border-blue-500">
+                    <div class="icon-bg w-16 h-16 rounded-full flex items-center justify-center mb-6 mx-auto">
+                        <i class="fas fa-search text-white text-2xl"></i>
+                    </div>
+                    <h4 class="text-xl font-bold mb-4 text-center">إصلاح Google Search Console</h4>
+                    <ul class="space-y-2 text-gray-600">
+                        <li class="flex items-start space-x-2 space-x-reverse">
+                            <i class="fas fa-check-circle text-green-500 mt-1"></i>
+                            <span>تحديد وإصلاح جميع الأخطاء المُسجلة</span>
+                        </li>
+                        <li class="flex items-start space-x-2 space-x-reverse">
+                            <i class="fas fa-check-circle text-green-500 mt-1"></i>
+                            <span>معالجة مشاكل الفهرسة والزحف</span>
+                        </li>
+                        <li class="flex items-start space-x-2 space-x-reverse">
+                            <i class="fas fa-check-circle text-green-500 mt-1"></i>
+                            <span>تحسين البيانات المُهيكلة</span>
+                        </li>
+                    </ul>
+                </div>
+                
+                <div class="card-hover bg-white rounded-xl p-8 shadow-lg border-t-4 border-purple-500">
+                    <div class="icon-bg w-16 h-16 rounded-full flex items-center justify-center mb-6 mx-auto">
+                        <i class="fas fa-edit text-white text-2xl"></i>
+                    </div>
+                    <h4 class="text-xl font-bold mb-4 text-center">تطوير المحتوى</h4>
+                    <ul class="space-y-2 text-gray-600">
+                        <li class="flex items-start space-x-2 space-x-reverse">
+                            <i class="fas fa-check-circle text-green-500 mt-1"></i>
+                            <span>مراجعة وتصحيح المحتوى القديم</span>
+                        </li>
+                        <li class="flex items-start space-x-2 space-x-reverse">
+                            <i class="fas fa-check-circle text-green-500 mt-1"></i>
+                            <span>إضافة محتوى جديد عالي الجودة</span>
+                        </li>
+                        <li class="flex items-start space-x-2 space-x-reverse">
+                            <i class="fas fa-check-circle text-green-500 mt-1"></i>
+                            <span>تحسين استراتيجية الكلمات المفتاحية</span>
+                        </li>
+                    </ul>
+                </div>
+                
+                <div class="card-hover bg-white rounded-xl p-8 shadow-lg border-t-4 border-indigo-500">
+                    <div class="icon-bg w-16 h-16 rounded-full flex items-center justify-center mb-6 mx-auto">
+                        <i class="fas fa-shield-alt text-white text-2xl"></i>
+                    </div>
+                    <h4 class="text-xl font-bold mb-4 text-center">تحديث الكود والأمان</h4>
+                    <ul class="space-y-2 text-gray-600">
+                        <li class="flex items-start space-x-2 space-x-reverse">
+                            <i class="fas fa-check-circle text-green-500 mt-1"></i>
+                            <span>تحديث الكود للمعايير الحديثة</span>
+                        </li>
+                        <li class="flex items-start space-x-2 space-x-reverse">
+                            <i class="fas fa-check-circle text-green-500 mt-1"></i>
+                            <span>صيانة الأجزاء التقنية</span>
+                        </li>
+                        <li class="flex items-start space-x-2 space-x-reverse">
+                            <i class="fas fa-check-circle text-green-500 mt-1"></i>
+                            <span>تطبيق أفضل الممارسات</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Design Improvements -->
+    <section id="design" class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <h3 class="text-4xl font-bold text-center mb-12 gradient-text">التحسينات التصميمية والواجهة</h3>
+            
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                <div>
+                    <h4 class="text-2xl font-bold mb-6">مكتبة تصميم حديثة</h4>
+                    <div class="space-y-4">
+                        <div class="flex items-center space-x-4 space-x-reverse p-4 bg-blue-50 rounded-lg">
+                            <div class="icon-bg p-3 rounded-full">
+                                <i class="fas fa-mobile-alt text-white"></i>
+                            </div>
+                            <div>
+                                <h5 class="font-semibold">تصميم متجاوب</h5>
+                                <p class="text-gray-600 text-sm">يعمل بكفاءة على جميع الأجهزة</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-center space-x-4 space-x-reverse p-4 bg-purple-50 rounded-lg">
+                            <div class="icon-bg p-3 rounded-full">
+                                <i class="fas fa-tachometer-alt text-white"></i>
+                            </div>
+                            <div>
+                                <h5 class="font-semibold">سرعة التحميل</h5>
+                                <p class="text-gray-600 text-sm">تحسين أداء الصفحات</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-center space-x-4 space-x-reverse p-4 bg-indigo-50 rounded-lg">
+                            <div class="icon-bg p-3 rounded-full">
+                                <i class="fas fa-user-friends text-white"></i>
+                            </div>
+                            <div>
+                                <h5 class="font-semibold">تجربة المستخدم</h5>
+                                <p class="text-gray-600 text-sm">واجهة سهلة الاستخدام</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div>
+                    <h4 class="text-2xl font-bold mb-6">خصائص التصميم المتطورة</h4>
+                    <div class="bg-gradient-to-br from-blue-50 to-purple-50 rounded-xl p-8">
+                        <ul class="space-y-4">
+                            <li class="flex items-start space-x-3 space-x-reverse">
+                                <i class="fas fa-palette text-blue-500 mt-1"></i>
+                                <span>تصميم متنوع وجذاب بصرياً</span>
+                            </li>
+                            <li class="flex items-start space-x-3 space-x-reverse">
+                                <i class="fas fa-layer-group text-purple-500 mt-1"></i>
+                                <span>خيارات متعددة لعرض المحتوى</span>
+                            </li>
+                            <li class="flex items-start space-x-3 space-x-reverse">
+                                <i class="fas fa-star text-indigo-500 mt-1"></i>
+                                <span>عرض المحتوى بأعلى جودة ممكنة</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Content Expansion -->
+    <section id="content" class="py-16 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <h3 class="text-4xl font-bold text-center mb-12 gradient-text">توسيع المحتوى وإضافة الصفحات</h3>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
+                <div class="card-hover bg-white rounded-xl p-6 shadow-lg">
+                    <div class="text-center mb-4">
+                        <div class="icon-bg w-12 h-12 rounded-full flex items-center justify-center mx-auto mb-3">
+                            <i class="fas fa-graduation-cap text-white"></i>
+                        </div>
+                        <h4 class="text-lg font-bold">المحتوى التعليمي</h4>
+                    </div>
+                    <ul class="text-sm space-y-2 text-gray-600">
+                        <li>• دلائل شاملة حول أنظمة مكافحة الحريق</li>
+                        <li>• مواد تعليمية متخصصة في السلامة</li>
+                        <li>• إرشادات تطبيقية عملية</li>
+                    </ul>
+                </div>
+                
+                <div class="card-hover bg-white rounded-xl p-6 shadow-lg">
+                    <div class="text-center mb-4">
+                        <div class="icon-bg w-12 h-12 rounded-full flex items-center justify-center mx-auto mb-3">
+                            <i class="fas fa-compass text-white"></i>
+                        </div>
+                        <h4 class="text-lg font-bold">المحتوى الإرشادي</h4>
+                    </div>
+                    <ul class="text-sm space-y-2 text-gray-600">
+                        <li>• إرشادات السلامة العامة</li>
+                        <li>• نصائل لتجنب الحرائق</li>
+                        <li>• إجراءات الطوارئ</li>
+                    </ul>
+                </div>
+                
+                <div class="card-hover bg-white rounded-xl p-6 shadow-lg">
+                    <div class="text-center mb-4">
+                        <div class="icon-bg w-12 h-12 rounded-full flex items-center justify-center mx-auto mb-3">
+                            <i class="fas fa-cogs text-white"></i>
+                        </div>
+                        <h4 class="text-lg font-bold">وصف الخدمات</h4>
+                    </div>
+                    <ul class="text-sm space-y-2 text-gray-600">
+                        <li>• عرض تفصيلي للخدمات</li>
+                        <li>• شرح شامل لنطاق العمل</li>
+                        <li>• الخبرات المتخصصة</li>
+                    </ul>
+                </div>
+                
+                <div class="card-hover bg-white rounded-xl p-6 shadow-lg">
+                    <div class="text-center mb-4">
+                        <div class="icon-bg w-12 h-12 rounded-full flex items-center justify-center mx-auto mb-3">
+                            <i class="fas fa-certificate text-white"></i>
+                        </div>
+                        <h4 class="text-lg font-bold">المؤهلات والتراخيص</h4>
+                    </div>
+                    <ul class="text-sm space-y-2 text-gray-600">
+                        <li>• عرض تراخيص الشركة</li>
+                        <li>• المؤهلات والاعتمادات</li>
+                        <li>• خبرة الدفاع المدني</li>
+                    </ul>
+                </div>
+                
+                <div class="card-hover bg-white rounded-xl p-6 shadow-lg">
+                    <div class="text-center mb-4">
+                        <div class="icon-bg w-12 h-12 rounded-full flex items-center justify-center mx-auto mb-3">
+                            <i class="fas fa-building text-white"></i>
+                        </div>
+                        <h4 class="text-lg font-bold">محتوى الشركات</h4>
+                    </div>
+                    <ul class="text-sm space-y-2 text-gray-600">
+                        <li>• معلومات الشركات المتخصصة</li>
+                        <li>• دراسات حالة عملية</li>
+                        <li>• أمثلة تطبيقية</li>
+                    </ul>
+                </div>
+                
+                <div class="card-hover bg-white rounded-xl p-6 shadow-lg">
+                    <div class="text-center mb-4">
+                        <div class="icon-bg w-12 h-12 rounded-full flex items-center justify-center mx-auto mb-3">
+                            <i class="fas fa-blog text-white"></i>
+                        </div>
+                        <h4 class="text-lg font-bold">المدونة الشاملة</h4>
+                    </div>
+                    <ul class="text-sm space-y-2 text-gray-600">
+                        <li>• مقالات تعريفية متخصصة</li>
+                        <li>• تقارير بيانية مفصلة</li>
+                        <li>• نصائح عملية للوقاية</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SEO & Marketing -->
+    <section class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <h3 class="text-4xl font-bold text-center mb-12 gradient-text">التسويق الرقمي وتحسين محركات البحث</h3>
+            
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+                <div>
+                    <h4 class="text-2xl font-bold mb-6">تحسين سلطة النطاق</h4>
+                    <div class="bg-gradient-to-r from-blue-50 to-purple-50 rounded-xl p-6">
+                        <div class="space-y-4">
+                            <div class="flex items-center space-x-3 space-x-reverse">
+                                <div class="icon-bg p-2 rounded-full">
+                                    <i class="fas fa-chart-line text-white text-sm"></i>
+                                </div>
+                                <span>تطبيق تقنيات مُحسَّنة لزيادة قوة النطاق</span>
+                            </div>
+                            <div class="flex items-center space-x-3 space-x-reverse">
+                                <div class="icon-bg p-2 rounded-full">
+                                    <i class="fas fa-link text-white text-sm"></i>
+                                </div>
+                                <span>تحسين الروابط الداخلية والخارجية</span>
+                            </div>
+                            <div class="flex items-center space-x-3 space-x-reverse">
+                                <div class="icon-bg p-2 rounded-full">
+                                    <i class="fas fa-star text-white text-sm"></i>
+                                </div>
+                                <span>رفع جودة المحتوى وتنوعه</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div>
+                    <h4 class="text-2xl font-bold mb-6">بناء الروابط الخلفية</h4>
+                    <div class="space-y-4">
+                        <div class="bg-blue-50 rounded-lg p-4">
+                            <h5 class="font-semibold mb-2">نشر في المنتديات المتخصصة</h5>
+                            <p class="text-sm text-gray-600">كتابة ونشر مقالات متخصصة في منتديات ذات سلطة عالية</p>
+                        </div>
+                        <div class="bg-purple-50 rounded-lg p-4">
+                            <h5 class="font-semibold mb-2">المنصات الشهيرة</h5>
+                            <div class="flex flex-wrap gap-2 mt-2">
+                                <span class="px-3 py-1 bg-blue-100 rounded-full text-xs">Medium</span>
+                                <span class="px-3 py-1 bg-purple-100 rounded-full text-xs">Quora</span>
+                                <span class="px-3 py-1 bg-pink-100 rounded-full text-xs">Pinterest</span>
+                                <span class="px-3 py-1 bg-indigo-100 rounded-full text-xs">Blog.com</span>
+                                <span class="px-3 py-1 bg-green-100 rounded-full text-xs">Meta</span>
+                                <span class="px-3 py-1 bg-green-100 rounded-full text-xs">منتديات عربية</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Google Services -->
+    <section class="py-16 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <h3 class="text-4xl font-bold text-center mb-12 gradient-text">إعادة التسجيل في خدمات Google</h3>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <div class="bg-white rounded-xl p-6 shadow-lg text-center card-hover">
+                    <div class="icon-bg w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fab fa-google text-white text-2xl"></i>
+                    </div>
+                    <h4 class="font-bold mb-2">Search Console</h4>
+                    <p class="text-sm text-gray-600">مراقبة أداء البحث وحل المشاكل</p>
+                </div>
+                
+                <div class="bg-white rounded-xl p-6 shadow-lg text-center card-hover">
+                    <div class="icon-bg w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-chart-bar text-white text-2xl"></i>
+                    </div>
+                    <h4 class="font-bold mb-2">Analytics</h4>
+                    <p class="text-sm text-gray-600">تتبع سلوك الزوار وتحليل البيانات</p>
+                </div>
+                
+                <div class="bg-white rounded-xl p-6 shadow-lg text-center card-hover">
+                    <div class="icon-bg w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-tags text-white text-2xl"></i>
+                    </div>
+                    <h4 class="font-bold mb-2">Tag Manager</h4>
+                    <p class="text-sm text-gray-600">إدارة علامات التتبع بكفاءة</p>
+                </div>
+                
+                <div class="bg-white rounded-xl p-6 shadow-lg text-center card-hover">
+                    <div class="icon-bg w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fab fa-facebook text-white text-2xl"></i>
+                    </div>
+                    <h4 class="font-bold mb-2">Facebook Pixel</h4>
+                    <p class="text-sm text-gray-600">تتبع التحويلات وتحليل السلوك</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Security & Additional Features -->
+    <section class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+                <div class="lg:col-span-1">
+                    <h3 class="text-3xl font-bold mb-6 gradient-text">تعزيز الأمان</h3>
+                    <div class="bg-gradient-to-r from-red-50 to-orange-50 rounded-xl p-6">
+                        <ul class="space-y-3">
+                            <li class="flex items-start space-x-2 space-x-reverse">
+                                <i class="fas fa-shield-alt text-red-500 mt-1"></i>
+                                <span class="text-sm">قيود أمان على المتصفحات</span>
+                            </li>
+                            <li class="flex items-start space-x-2 space-x-reverse">
+                                <i class="fas fa-lock text-orange-500 mt-1"></i>
+                                <span class="text-sm">حماية ملفات الخادم</span>
+                            </li>
+                            <li class="flex items-start space-x-2 space-x-reverse">
+                                <i class="fas fa-user-shield text-red-600 mt-1"></i>
+                                <span class="text-sm">إجراءات وقائية ضد الاختراق</span>
+                            </li>
+                            <li class="flex items-start space-x-2 space-x-reverse">
+                                <i class="fas fa-database text-orange-600 mt-1"></i>
+                                <span class="text-sm">ضمان سلامة البيانات</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="lg:col-span-1">
+                    <h3 class="text-3xl font-bold mb-6 gradient-text">خرائط الموقع</h3>
+                    <div class="space-y-4">
+                        <div class="bg-blue-50 rounded-lg p-4">
+                            <div class="flex items-center space-x-3 space-x-reverse">
+                                <i class="fas fa-sitemap text-blue-500"></i>
+                                <div>
+                                    <h5 class="font-semibold">sitemap.xml</h5>
+                                    <p class="text-sm text-gray-600">فهرسة جميع صفحات الموقع</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="bg-purple-50 rounded-lg p-4">
+                            <div class="flex items-center space-x-3 space-x-reverse">
+                                <i class="fas fa-images text-purple-500"></i>
+                                <div>
+                                    <h5 class="font-semibold">image-sitemap.xml</h5>
+                                    <p class="text-sm text-gray-600">أرشفة وفهرسة الصور</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="lg:col-span-1">
+                    <h3 class="text-3xl font-bold mb-6 gradient-text">إدارة الكلمات المفتاحية</h3>
+                    <div class="bg-gradient-to-r from-green-50 to-teal-50 rounded-xl p-6">
+                        <ul class="space-y-3">
+                            <li class="flex items-start space-x-2 space-x-reverse">
+                                <i class="fas fa-sync-alt text-green-500 mt-1"></i>
+                                <span class="text-sm">تغيير دوري للكلمات المستهدفة</span>
+                            </li>
+                            <li class="flex items-start space-x-2 space-x-reverse">
+                                <i class="fas fa-chart-line text-teal-500 mt-1"></i>
+                                <span class="text-sm">مراقبة الأداء والظهور</span>
+                            </li>
+                            <li class="flex items-start space-x-2 space-x-reverse">
+                                <i class="fas fa-users text-green-600 mt-1"></i>
+                                <span class="text-sm">تحليل المنافسة</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Results & Conclusion -->
+    <section id="results" class="py-20 gradient-bg text-white">
+        <div class="container mx-auto px-4">
+            <h3 class="text-4xl font-bold text-center mb-12">الخلاصة والنتائج</h3>
+            
+            <div class="max-w-4xl mx-auto">
+                <div class="bg-white bg-opacity-10 backdrop-blur-sm rounded-xl p-8 mb-8">
+                    <p class="text-lg leading-relaxed mb-6">
+                        تم تنفيذ مشروع شامل لتطوير وتحسين موقع نظرة الإبداع لأنظمة مكافحة الحريق، حيث شمل العمل جميع الجوانب التقنية والتسويقية والأمنية.
+                    </p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <div class="timeline-item">
+                        <div class="timeline-line"></div>
+                        <div class="bg-white bg-opacity-10 backdrop-blur-sm rounded-lg p-6 mb-4">
+                            <h4 class="font-bold mb-2">تحسين ترتيب محركات البحث</h4>
+                            <p class="text-sm opacity-90">زيادة الظهور في نتائج البحث المتقدمة</p>
+                        </div>
+                    </div>
+                    
+                    <div class="timeline-item">
+                        <div class="timeline-line"></div>
+                        <div class="bg-white bg-opacity-10 backdrop-blur-sm rounded-lg p-6 mb-4">
+                            <h4 class="font-bold mb-2">زيادة حركة الزوار</h4>
+                            <p class="text-sm opacity-90">جذب المزيد من الزوار المستهدفين</p>
+                        </div>
+                    </div>
+                    
+                    <div class="timeline-item">
+                        <div class="timeline-line"></div>
+                        <div class="bg-white bg-opacity-10 backdrop-blur-sm rounded-lg p-6 mb-4">
+                            <h4 class="font-bold mb-2">تعزيز سلطة النطاق</h4>
+                            <p class="text-sm opacity-90">بناء موثوقية أقوى في المجال</p>
+                        </div>
+                    </div>
+                    
+                    <div class="timeline-item">
+                        <div class="timeline-line"></div>
+                        <div class="bg-white bg-opacity-10 backdrop-blur-sm rounded-lg p-6 mb-4">
+                            <h4 class="font-bold mb-2">تحسين تجربة المستخدم</h4>
+                            <p class="text-sm opacity-90">واجهة أكثر سهولة وجاذبية</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="text-center mt-12">
+                    <div class="bg-white bg-opacity-20 rounded-xl p-8 backdrop-blur-sm">
+                        <h4 class="text-2xl font-bold mb-4">استثمار استراتيجي في المستقبل الرقمي</h4>
+                        <p class="text-lg opacity-90">
+                            تمثل هذه الجهود استثماراً استراتيجياً في الحضور الرقمي للشركة وتعزيز مكانتها في السوق المتخصص في أنظمة مكافحة الحريق.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-12">
+        <div class="container mx-auto px-4 text-center">
+            <div class="flex items-center justify-center space-x-4 space-x-reverse mb-6">
+                <div class="icon-bg p-3 rounded-full">
+                    <i class="fas fa-fire-extinguisher text-2xl"></i>
+                </div>
+                <div>
+                    <h3 class="text-xl font-bold">نظرة الإبداع</h3>
+                    <p class="text-sm text-gray-400">أنظمة مكافحة الحريق</p>
+                </div>
+            </div>
+            
+            <div class="section-divider w-20 mx-auto"></div>
+            
+            <p class="text-gray-400 mb-4">تقرير شامل للتحسينات التقنية والتطويرية</p>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Add scroll effect to navbar
+        window.addEventListener('scroll', function() {
+            const header = document.querySelector('header');
+            if (window.scrollY > 100) {
+                header.style.backgroundColor = 'rgba(102, 126, 234, 0.95)';
+                header.style.backdropFilter = 'blur(10px)';
+            } else {
+                header.style.backgroundColor = '';
+                header.style.backdropFilter = '';
+            }
+        });
+
+        // Add animation to counters when in view
+        const observerOptions = {
+            threshold: 0.5,
+            rootMargin: '0px 0px -100px 0px'
+        };
+
+        const observer = new IntersectionObserver(function(entries) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        // Observe all card elements
+        document.querySelectorAll('.card-hover').forEach(card => {
+            card.style.opacity = '0';
+            card.style.transform = 'translateY(20px)';
+            card.style.transition = 'all 0.6s ease';
+            observer.observe(card);
+        });
+    </script>
+</body>
+</html>
