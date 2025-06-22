@@ -7,15 +7,19 @@
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;900&display=swap" rel="stylesheet">
+    <!-- ====== Begin CSS Styles / بداية تنسيقات CSS ====== -->
     <style>
+        /* قاعدة الخطوط الافتراضية لضمان اتساق الخطوط عبر الموقع */
         * {
             font-family: 'Cairo', sans-serif;
         }
         
+        /* إنشاء خلفية بتدرج لوني للأقسام المهمة لجذب الانتباه */
         .gradient-bg {
             background: linear-gradient(135deg, #db3545 0%, #8f1d24 100%);
         }
         
+        /* استخدام تدرج لوني داخل النص لإبراز العناوين الرئيسية */
         .gradient-text {
             background: linear-gradient(135deg, #db3545 0%, #8f1d24 100%);
             -webkit-background-clip: text;
@@ -23,15 +27,18 @@
             background-clip: text;
         }
         
+        /* حركة طفيفة للبطاقات عند المرور عليها لتعزيز التفاعل البصري */
         .card-hover {
             transition: all 0.3s ease;
         }
         
+        /* عند تحريك المؤشر، ارتفع البطاقة وطبّق ظلًّا لإبرازها */
         .card-hover:hover {
             transform: translateY(-5px);
             box-shadow: 0 20px 40px rgba(0,0,0,0.1);
         }
         
+        /* خط فاصل مزخرف يُستخدم لتقسيم الأقسام بصرياً */
         .section-divider {
             height: 4px;
             background: linear-gradient(90deg, #db3545 0%, #8f1d24 100%);
@@ -39,15 +46,18 @@
             margin: 2rem 0;
         }
         
+        /* خلفية أيقونات دائرية بنفس التدرج لتعزيز التناسق البصري */
         .icon-bg {
             background: linear-gradient(135deg, #db3545 0%, #8f1d24 100%);
         }
         
+        /* عنصر مُعدّ لعدادات الأرقام مع تأثير تمرير جذاب */
         .counter-item {
             position: relative;
             overflow: hidden;
         }
         
+        /* شريط تدرج متحرك يظهر عند المرور على العداد */
         .counter-item::before {
             content: '';
             position: absolute;
@@ -64,11 +74,13 @@
             transform: translateX(0);
         }
         
+        /* عنصر من خط الزمن لعرض مراحل العمل بترتيب منطقي */
         .timeline-item {
             position: relative;
             padding-right: 2rem;
         }
         
+        /* نقطة التمركز لكل حدث داخل خط الزمن */
         .timeline-item::before {
             content: '';
             position: absolute;
@@ -107,13 +119,16 @@
     </style>
 </head>
 <body class="bg-gray-50 text-gray-800">
-    <!-- Header -->
+    <!-- =============================================================
+     Header / رأس الصفحة
+     يضم شعار "نظرة الإبداع" وروابط الانتقال السريع إلى أقسام التقرير
+============================================================= -->
     <header class="gradient-bg text-white py-6 sticky top-0 z-50 shadow-lg">
         <div class="container mx-auto px-4">
             <div class="flex items-center justify-between">
                 <div class="flex items-center space-x-4 space-x-reverse">
                     <div class="icon-bg p-3 rounded-full">
-                        <i class="fas fa-fire-extinguisher text-2xl"></i>
+                        <img src="https://nazretelebdaa.com/assets/img/icon.webp" class="fas fa-fire-extinguisher" width="50" height="50" alt="icon">
                     </div>
                     <div>
                         <h1 class="text-2xl font-bold">نظرة الإبداع</h1>
@@ -131,7 +146,10 @@
         </div>
     </header>
 
-    <!-- Hero Section -->
+    <!-- =============================================================
+     Hero Section / قسم العنوان الرئيسي
+     يعرّف الزائر على طبيعة التقرير والفائدة المرجُوّة منه بصورة جذابة
+============================================================= -->
     <section class="gradient-bg text-white py-20">
         <div class="container mx-auto px-4 text-center">
             <div class="max-w-4xl mx-auto">
@@ -142,7 +160,10 @@
         </div>
     </section>
 
-    <!-- Introduction -->
+    <!-- =============================================================
+     Introduction / المقدمة
+     تلخيص للأعمال المنفَّذة بهدف تحسين الموقع على المستوى التقني وعلى مستوى تجربة المستخدم ومحركات البحث
+============================================================= -->
     <section id="intro" class="py-16 bg-white">
         <div class="container mx-auto px-4">
             <div class="max-w-4xl mx-auto">
@@ -156,7 +177,10 @@
         </div>
     </section>
 
-    <!-- Technical Improvements -->
+    <!-- =============================================================
+     Technical Improvements / التحسينات التقنية الأساسية
+     بنود عملية توضّح ما تم إصلاحه أو تطويره في البنية البرمجية للموقع (سرعة، أمن، تهيئة لمحركات البحث…)
+============================================================= -->
     <section id="technical" class="py-16 bg-gray-50">
         <div class="container mx-auto px-4">
             <h3 class="text-4xl font-bold text-center mb-12 gradient-text">التحسينات التقنية الأساسية</h3>
@@ -167,6 +191,7 @@
                         <i class="fas fa-search text-white text-2xl"></i>
                     </div>
                     <h4 class="text-xl font-bold mb-4 text-center">إصلاح Google Search Console</h4>
+                        <p class="text-sm text-gray-700 leading-relaxed mb-4">يشمل ذلك تحليل تقارير (Coverage) وحل جميع الأخطاء الحرجة، إضافة ملفات <code>sitemap.xml</code> مُحسَّنة، ومعالجة مشاكل الزحف لضمان فهرسة جميع الصفحات المهمة.</p>
                     <ul class="space-y-2 text-gray-600">
                         <li class="flex items-start space-x-2 space-x-reverse">
                             <i class="fas fa-check-circle text-green-500 mt-1"></i>
@@ -188,6 +213,7 @@
                         <i class="fas fa-edit text-white text-2xl"></i>
                     </div>
                     <h4 class="text-xl font-bold mb-4 text-center">تطوير المحتوى</h4>
+                        <p class="text-sm text-gray-700 leading-relaxed mb-4">تم إنتاج مقالات متخصصة مع كلمات مفتاحية طويلة الذيل، وتحسين العناوين الوصفية والعناوين الفرعية لزيادة ملاءمة المحتوى وجاذبيته لجمهور البحث.</p>
                     <ul class="space-y-2 text-gray-600">
                         <li class="flex items-start space-x-2 space-x-reverse">
                             <i class="fas fa-check-circle text-green-500 mt-1"></i>
@@ -228,7 +254,10 @@
         </div>
     </section>
 
-    <!-- Design Improvements -->
+    <!-- =============================================================
+     Design Improvements / التحسينات التصميمية والواجهة
+     تفاصيل حول تحديث الهوية البصرية وتجربة المستخدم بما يشمل الألوان والخطوط والتخطيط Responsive
+============================================================= -->
     <section id="design" class="py-16 bg-white">
         <div class="container mx-auto px-4">
             <h3 class="text-4xl font-bold text-center mb-12 gradient-text">التحسينات التصميمية والواجهة</h3>
@@ -292,7 +321,10 @@
         </div>
     </section>
 
-    <!-- Content Expansion -->
+    <!-- =============================================================
+     Content Expansion / توسيع المحتوى
+     شرح إضافة صفحات جديدة ومحتويات إرشادية لتعزيز استراتيجية الكلمات المفتاحية وزيادة القيمة للزائر
+============================================================= -->
     <section id="content" class="py-16 bg-gray-50">
         <div class="container mx-auto px-4">
             <h3 class="text-4xl font-bold text-center mb-12 gradient-text">توسيع المحتوى وإضافة الصفحات</h3>
@@ -385,7 +417,10 @@
         </div>
     </section>
 
-    <!-- SEO & Marketing -->
+    <!-- =============================================================
+     SEO & Marketing / التسويق الرقمي وتحسين محركات البحث
+     خطوات عملية لتعزيز الظهور العضوي، بناء الروابط، وتحسين سلطة الدومين
+============================================================= -->
     <section class="py-16 bg-white">
         <div class="container mx-auto px-4">
             <h3 class="text-4xl font-bold text-center mb-12 gradient-text">التسويق الرقمي وتحسين محركات البحث</h3>
@@ -441,7 +476,10 @@
         </div>
     </section>
 
-    <!-- Google Services -->
+    <!-- =============================================================
+     Google Services / إعادة التسجيل في خدمات Google
+     دمج وتحسين أدوات Google مثل Analytics و Tag Manager لضمان تتبّع أدق وتحليل أفضل للبيانات
+============================================================= -->
     <section class="py-16 bg-gray-50">
         <div class="container mx-auto px-4">
             <h3 class="text-4xl font-bold text-center mb-12 gradient-text">إعادة التسجيل في خدمات Google</h3>
@@ -482,7 +520,10 @@
         </div>
     </section>
 
-    <!-- Security & Additional Features -->
+    <!-- =============================================================
+     Security & Additional Features / ميزات الأمان والإضافات
+     وصف للإجراءات الأمنية ومزايا الحماية التي تم تطبيقها لضمان سلامة البيانات والمستخدمين
+============================================================= -->
     <section class="py-16 bg-white">
         <div class="container mx-auto px-4">
             <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
@@ -557,7 +598,10 @@
         </div>
     </section>
 
-    <!-- Results & Conclusion -->
+    <!-- =============================================================
+     Results & Conclusion / النتائج والخلاصة
+     ملخّص رقمي ووصفي لقيمة التحسينات وتأثيرها المتوقع على حضور الشركة الرقمي
+============================================================= -->
     <section id="results" class="py-20 gradient-bg text-white">
         <div class="container mx-auto px-4">
             <h3 class="text-4xl font-bold text-center mb-12">الخلاصة والنتائج</h3>
@@ -620,7 +664,8 @@
         <div class="container mx-auto px-4 text-center">
             <div class="flex items-center justify-center space-x-4 space-x-reverse mb-6">
                 <div class="icon-bg p-3 rounded-full">
-                    <i class="fas fa-fire-extinguisher text-2xl"></i>
+                    <img src="https://nazretelebdaa.com/assets/img/icon.webp" class="fas fa-fire-extinguisher" width="50" height="50" alt="icon">
+
                 </div>
                 <div>
                     <h3 class="text-xl font-bold">نظرة الإبداع</h3>
@@ -634,8 +679,12 @@
         </div>
     </footer>
 
+    <!-- ====== Begin JavaScript / بداية شيفرة جافاسكريبت للتفاعل والتحريك ====== -->
     <script>
-        // Smooth scrolling for navigation links
+        // =============================================================
+        // Smooth scrolling for navigation links / التمرير السلس عند النقر على روابط التنقل
+        // يوفّر تجربة تنقل مريحة عبر الانتقال التدريجي إلى القسم المطلوب
+        // =============================================================
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 e.preventDefault();
@@ -649,7 +698,10 @@
             });
         });
 
-        // Add scroll effect to navbar
+        // =============================================================
+        // Add scroll effect to navbar / تغيير مظهر شريط التنقل عند التمرير
+        // يضيف خلفية شفافة ومعالج ضبابي لزيادة الوضوح عند النزول لأسفل الصفحة
+        // =============================================================
         window.addEventListener('scroll', function() {
             const header = document.querySelector('header');
             if (window.scrollY > 100) {
@@ -661,7 +713,10 @@
             }
         });
 
-        // Add animation to counters when in view
+        // =============================================================
+        // Add animation to counters when in view / تشغيل الحركات للبطاقات عند ظهورها في نافذة العرض
+        // تستخدم IntersectionObserver لتفعيل الحركة بشكل محسّن للأداء
+        // =============================================================
         const observerOptions = {
             threshold: 0.5,
             rootMargin: '0px 0px -100px 0px'
